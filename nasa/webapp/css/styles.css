@@ -1,0 +1,67 @@
+body {
+	background-color: black;
+	background-image: url("../images/stars3.jpg");
+}
+
+#container {
+	width:1114px; 
+	margin: 0 auto;
+}
+
+#banner{
+	width: 100%;
+    /* border: 1px solid #333333;
+	border-radius: 10px; */
+}
+
+#content {
+	display: block;
+	background-color: white;
+	padding: 10px 10px 10px 10px;
+}
+
+form {
+    display: block;
+    margin-top: 0em;
+}
+
+#lineForm{
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+#result{
+	margin: 10px 0px 10px 0px;
+}
+
+#footer {
+	height:60px;
+	background-color: #262626;
+	border-top-style: solid;
+	border-color: white;
+}
+
+.smallInputText{
+	width: 30px;
+	margin-left: 10px;
+}
+
+.inputTextHeight{
+	height: 13px;
+}
+
+.simplePanel{
+	margin-bottom: 10px;
+}
+
+.resultPanel{
+	margin: 10px 0px 10px 0px;
+}
+
+.largeInputTextarea {
+	width: 500px;
+	height: 100px;
+}
+
+
+/* PRIMEFACES OVERRIDE CSS */

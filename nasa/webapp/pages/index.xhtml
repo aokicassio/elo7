@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+
+	<ui:composition template="/templates/template.xhtml">
+	
+		<ui:define name="content">
+			<h:form id="formNasa">
+				<h3><p:outputLabel value="Sondas Espaciais de Marte"></p:outputLabel></h3>
+				<div id="lineForm">
+					<p:outputLabel for="superiorDireitoX"
+						value="Ponto Superior Direito(X,Y): " />
+					<p:inputText id="superiorDireitoX" value="#{nasaManagedBean.entrada.pontoSuperiorDireitoX}" 
+						required="true" maxlength="4" styleClass="smallInputText inputTextHeight"/>
+					<p:inputText id="superiorDireitoY" value="#{nasaManagedBean.entrada.pontoSuperiorDireitoY}" 
+						required="true" maxlength="4" styleClass="smallInputText inputTextHeight"/>
+					
+				</div>
+				<p:panel id="sonda1" styleClass="simplePanel">
+					<div id="lineForm">
+						<p:outputLabel for="coord1X" value="Coordenadas Sonda 1 (X,Y,Direção): " />
+						<p:inputText id="coord1X" value="#{nasaManagedBean.entrada.coordenada1X}"
+							required="true" maxlength="4" styleClass="smallInputText inputTextHeight"/>
+						<p:inputText id="coord1Y" value="#{nasaManagedBean.entrada.coordenada1Y}"
+							required="true" maxlength="4" styleClass="smallInputText inputTextHeight"/>
+						<p:inputText id="coord1D" value="#{nasaManagedBean.entrada.coordenada1D}"
+							required="true" maxlength="1" styleClass="smallInputText inputTextHeight"/>
+					</div>
+	
+					<div id="lineForm">
+						<p:outputLabel for="comandos1" value="Comandos Sonda 1: " />
+						<p:inputText id="comandos1" value="#{nasaManagedBean.entrada.comandos1}"
+							required="true" maxlength="20" styleClass="inputTextHeight"/>
+					</div>
+				</p:panel>
+	
+	
+				<p:panel id="sonda2" styleClass="simplePanel">
+					<div id="lineForm">
+						<p:outputLabel for="coord2X" value="Coordenadas Sonda 2 (X,Y,Direção): " />
+						<p:inputText id="coord2X" value="#{nasaManagedBean.entrada.coordenada2X}"
+							required="true" maxlength="4" styleClass="smallInputText inputTextHeight"/>
+						<p:inputText id="coord2Y" value="#{nasaManagedBean.entrada.coordenada2Y}"
+							required="true" maxlength="4" styleClass="smallInputText inputTextHeight"/>
+						<p:inputText id="coord2D" value="#{nasaManagedBean.entrada.coordenada2D}"
+							required="true" maxlength="1" styleClass="smallInputText inputTextHeight"/>
+					</div>
+		
+					<div id="lineForm">
+						<p:outputLabel for="comandos2" value="Comandos Sonda 2: " />
+						<p:inputText id="comandos2" value="#{nasaManagedBean.entrada.comandos2}"
+							required="true" maxlength="20" onkeyup="comandosSonda(this.String)" 
+							type="text" styleClass="inputTextHeight" />
+					</div>
+				</p:panel>
+				
+				<p:commandButton value="Executar" update="formNasa"
+					actionListener="#{nasaManagedBean.executar}"/>
+				<p:commandButton value="Limpar" actionListener="#{nasaManagedBean.limpar}"  update="formNasa" process="@this">
+					<p:resetInput target="formNasa" />
+				</p:commandButton>
+				
+				<p:panel id="resultPanel" rendered="#{nasaManagedBean.resultadoRendered}" styleClass="resultPanel">
+					<div id="result">
+						<h3>
+							<p:outputLabel value="Resultado"/>
+						</h3>
+						<p:inputTextarea disabled="true" styleClass="largeInputTextarea" value="#{nasaManagedBean.resultado.resultado}"/>
+					</div>
+				</p:panel>
+			</h:form>
+		</ui:define>
+		
+	</ui:composition>
+
+</html>

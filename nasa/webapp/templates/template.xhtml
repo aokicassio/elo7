@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	
+	<h:head>
+		<link rel="stylesheet" type="text/css"
+			href="#{facesContext.externalContext.requestContextPath}/css/styles.css"
+			media="screen"/>
+		<script type="text/javascript"
+			src="#{facesContext.externalContext.requestContextPath}/js/utils.js?ln=js"/>
+	</h:head>
+	<h:body>
+		
+		<div id="container">
+			<div id="banner">
+				<img src="#{facesContext.externalContext.requestContextPath}/images/banner-small.jpg" />
+			</div>
+			<div id="content">
+				<p:messages id="messages" showDetail="true" autoUpdate="true" closable="true" />
+				<ui:insert name="content"/>
+			</div>
+	
+			<div id="footer">
+				<!-- 		
+				<ui:insert name="footer">
+					<ui:include src="/template/basicfooter.xhtml" />
+				</ui:insert> 
+				-->
+			</div>
+	
+		</div>
+	</h:body>
+</html>
