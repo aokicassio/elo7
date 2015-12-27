@@ -11,6 +11,7 @@ import javax.faces.context.FacesContext;
 
 import elo7.nasa.entity.Sonda;
 import elo7.nasa.entity.commons.Coordenada;
+import elo7.nasa.entity.commons.Direcao;
 import elo7.nasa.jsf.dto.EntradaDTO;
 import elo7.nasa.jsf.dto.ResultadoDTO;
 import elo7.nasa.processor.Processador;
@@ -33,6 +34,10 @@ public class NasaManagedBean {
 	@PostConstruct
 	public void init(){
 		limpar();
+	}
+	
+	public Direcao[] getDirecoes(){
+		return Direcao.values();
 	}
 	
 	public void limpar(){

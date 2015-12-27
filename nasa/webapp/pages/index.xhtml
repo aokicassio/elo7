@@ -14,27 +14,26 @@
 				<div id="lineForm">
 					<p:outputLabel for="superiorDireitoX"
 						value="Ponto Superior Direito(X,Y): " />
-					<p:inputText id="superiorDireitoX" value="#{nasaManagedBean.entrada.pontoSuperiorDireitoX}" 
+					<p:inputText id="superiorDireitoX" value="#{nasaManagedBean.entrada.pontoSuperiorDireitoX}" onkeyup="mascara(this, somenteNumeros)"
 						required="true" maxlength="4" styleClass="smallInputText inputTextHeight"/>
-					<p:inputText id="superiorDireitoY" value="#{nasaManagedBean.entrada.pontoSuperiorDireitoY}" 
+					<p:inputText id="superiorDireitoY" value="#{nasaManagedBean.entrada.pontoSuperiorDireitoY}" onkeyup="mascara(this, somenteNumeros)"
 						required="true" maxlength="4" styleClass="smallInputText inputTextHeight"/>
-					
 				</div>
 				<p:panel id="sonda1" styleClass="simplePanel">
 					<div id="lineForm">
 						<p:outputLabel for="coord1X" value="Coordenadas Sonda 1 (X,Y,Direção): " />
-						<p:inputText id="coord1X" value="#{nasaManagedBean.entrada.coordenada1X}"
+						<p:inputText id="coord1X" value="#{nasaManagedBean.entrada.coordenada1X}" onkeyup="mascara(this, somenteNumeros)"
 							required="true" maxlength="4" styleClass="smallInputText inputTextHeight"/>
-						<p:inputText id="coord1Y" value="#{nasaManagedBean.entrada.coordenada1Y}"
+						<p:inputText id="coord1Y" value="#{nasaManagedBean.entrada.coordenada1Y}" onkeyup="mascara(this, somenteNumeros)"
 							required="true" maxlength="4" styleClass="smallInputText inputTextHeight"/>
 						<p:inputText id="coord1D" value="#{nasaManagedBean.entrada.coordenada1D}"
-							required="true" maxlength="1" styleClass="smallInputText inputTextHeight"/>
+							required="true" maxlength="1" styleClass="smallInputText inputTextHeight" onkeyup="mascara(this,sondaDirecoes)"/>
 					</div>
-	
 					<div id="lineForm">
 						<p:outputLabel for="comandos1" value="Comandos Sonda 1: " />
 						<p:inputText id="comandos1" value="#{nasaManagedBean.entrada.comandos1}"
-							required="true" maxlength="20" styleClass="inputTextHeight"/>
+							required="true" maxlength="20" onkeyup="mascara(this,sondaComandos)"
+							styleClass="inputTextHeight"/>
 					</div>
 				</p:panel>
 	
@@ -42,19 +41,19 @@
 				<p:panel id="sonda2" styleClass="simplePanel">
 					<div id="lineForm">
 						<p:outputLabel for="coord2X" value="Coordenadas Sonda 2 (X,Y,Direção): " />
-						<p:inputText id="coord2X" value="#{nasaManagedBean.entrada.coordenada2X}"
+						<p:inputText id="coord2X" value="#{nasaManagedBean.entrada.coordenada2X}" onkeyup="mascara(this, somenteNumeros)"
 							required="true" maxlength="4" styleClass="smallInputText inputTextHeight"/>
-						<p:inputText id="coord2Y" value="#{nasaManagedBean.entrada.coordenada2Y}"
+						<p:inputText id="coord2Y" value="#{nasaManagedBean.entrada.coordenada2Y}" onkeyup="mascara(this, somenteNumeros)"
 							required="true" maxlength="4" styleClass="smallInputText inputTextHeight"/>
-						<p:inputText id="coord2D" value="#{nasaManagedBean.entrada.coordenada2D}"
-							required="true" maxlength="1" styleClass="smallInputText inputTextHeight"/>
+						<p:inputText id="coord2D" value="#{nasaManagedBean.entrada.coordenada2D}" 
+							required="true" maxlength="1" onkeyup="mascara(this,sondaDirecoes)"
+							styleClass="smallInputText inputTextHeight" />
 					</div>
-		
 					<div id="lineForm">
 						<p:outputLabel for="comandos2" value="Comandos Sonda 2: " />
 						<p:inputText id="comandos2" value="#{nasaManagedBean.entrada.comandos2}"
-							required="true" maxlength="20" onkeyup="comandosSonda(this.String)" 
-							type="text" styleClass="inputTextHeight" />
+							required="true" maxlength="20" onkeyup="mascara(this,sondaComandos)"
+							styleClass="inputTextHeight" />
 					</div>
 				</p:panel>
 				
