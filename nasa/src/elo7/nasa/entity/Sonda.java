@@ -41,7 +41,7 @@ public class Sonda {
 			this.coordenada.setX(coordenada.getX()+1);
 			break;
 		default:
-			break;
+			throw new ProcessingException();
 		}
 		
 	}

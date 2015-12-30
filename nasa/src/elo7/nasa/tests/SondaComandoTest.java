@@ -10,7 +10,7 @@ import elo7.nasa.exception.ProcessingException;
 
 import org.junit.Assert;
 
-public class SondaAcaoTest {
+public class SondaComandoTest {
 	
 	@Test
 	public void testAcaoGirarRight() throws ProcessingException{
