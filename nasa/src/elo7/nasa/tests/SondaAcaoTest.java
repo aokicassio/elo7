@@ -54,4 +54,28 @@ public class SondaAcaoTest {
 		
 	}
 	
+	@Test
+	public void testAcaoMovimentar() throws ProcessingException{
+		
+		Sonda sonda = new Sonda(Direcao.E, new Coordenada(0, 0));
+		sonda.executarAcao(Comando.M);
+		Assert.assertEquals(1, sonda.getCoordenada().getX());
+		
+		sonda.setDirecao(Direcao.W);
+		sonda.setCoordenada(new Coordenada(0, 0));
+		sonda.executarAcao(Comando.M);
+		Assert.assertEquals(-1, sonda.getCoordenada().getX());
+		
+		sonda.setDirecao(Direcao.N);
+		sonda.setCoordenada(new Coordenada(0, 0));
+		sonda.executarAcao(Comando.M);
+		Assert.assertEquals(1, sonda.getCoordenada().getY());
+		
+		sonda.setDirecao(Direcao.S);
+		sonda.setCoordenada(new Coordenada(0, 0));
+		sonda.executarAcao(Comando.M);
+		Assert.assertEquals(-1, sonda.getCoordenada().getY());
+
+	}
+	
 }
