@@ -13,7 +13,7 @@ import org.junit.Assert;
 public class SondaComandoTest {
 	
 	@Test
-	public void testAcaoGirarRight() throws ProcessingException{
+	public void testComandoGirarRight() throws ProcessingException{
 		
 		Sonda sonda = new Sonda(Direcao.N, new Coordenada(0,0));
 		sonda.executarAcao(Comando.R);
@@ -34,7 +34,7 @@ public class SondaComandoTest {
 	}
 	
 	@Test
-	public void testAcaoGirarLeft() throws ProcessingException{
+	public void testComandoGirarLeft() throws ProcessingException{
 		
 		Sonda sonda = new Sonda(Direcao.N, new Coordenada(0, 0));
 		sonda.executarAcao(Comando.L);
@@ -55,27 +55,34 @@ public class SondaComandoTest {
 	}
 	
 	@Test
-	public void testAcaoMovimentar() throws ProcessingException{
+	public void testComandoMovimentar() throws ProcessingException{
 		
-		Sonda sonda = new Sonda(Direcao.E, new Coordenada(0, 0));
+		Sonda sonda = new Sonda(Direcao.N, new Coordenada(0, 0));
+		
+		sonda.setDirecao(Direcao.N);
+		sonda.setCoordenada(new Coordenada(0, 0));
+		sonda.executarAcao(Comando.M);
+		Assert.assertEquals(0, sonda.getCoordenada().getX());
+		Assert.assertEquals(1, sonda.getCoordenada().getY());
+		
+		sonda.setDirecao(Direcao.E);
+		sonda.setCoordenada(new Coordenada(0, 0));
 		sonda.executarAcao(Comando.M);
 		Assert.assertEquals(1, sonda.getCoordenada().getX());
+		Assert.assertEquals(0, sonda.getCoordenada().getY());
+		
+		sonda.setDirecao(Direcao.S);
+		sonda.setCoordenada(new Coordenada(0, 0));
+		sonda.executarAcao(Comando.M);
+		Assert.assertEquals(0, sonda.getCoordenada().getX());
+		Assert.assertEquals(-1, sonda.getCoordenada().getY());
 		
 		sonda.setDirecao(Direcao.W);
 		sonda.setCoordenada(new Coordenada(0, 0));
 		sonda.executarAcao(Comando.M);
 		Assert.assertEquals(-1, sonda.getCoordenada().getX());
+		Assert.assertEquals(0, sonda.getCoordenada().getY());
 		
-		sonda.setDirecao(Direcao.N);
-		sonda.setCoordenada(new Coordenada(0, 0));
-		sonda.executarAcao(Comando.M);
-		Assert.assertEquals(1, sonda.getCoordenada().getY());
-		
-		sonda.setDirecao(Direcao.S);
-		sonda.setCoordenada(new Coordenada(0, 0));
-		sonda.executarAcao(Comando.M);
-		Assert.assertEquals(-1, sonda.getCoordenada().getY());
-
 	}
 	
 }
