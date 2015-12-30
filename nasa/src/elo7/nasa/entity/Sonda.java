@@ -41,12 +41,13 @@ public class Sonda {
 			this.coordenada.setX(coordenada.getX()+1);
 			break;
 		default:
-			throw new ProcessingException();
+			break;
 		}
 		
 	}
 	
 	private void girar(Comando comando) throws ProcessingException{
+		
 		switch (comando) {
 		case L:
 			
@@ -66,6 +67,7 @@ public class Sonda {
 			default:
 				throw new ProcessingException();
 			}
+			break;
 			
 		case R:
 			switch (this.direcao) {
@@ -85,8 +87,10 @@ public class Sonda {
 				throw new ProcessingException();
 			}
 			
+			break;
+		
 		default:
-			throw new ProcessingException();
+			break;
 		}
 		
 	}
