@@ -1,17 +1,17 @@
 package elo7.nasa.exception;
 
-public class ConvertionException extends Exception {
+public class ConvertException extends Exception {
 	
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public ConvertionException(){
+	public ConvertException(){
 		
 	}
 	
-	public ConvertionException(String message){
+	public ConvertException(String message){
 		super(message);
 	}
 }

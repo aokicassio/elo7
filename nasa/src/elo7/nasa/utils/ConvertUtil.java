@@ -5,7 +5,7 @@ import java.util.List;
 
 import elo7.nasa.entity.commons.Comando;
 import elo7.nasa.entity.commons.Direcao;
-import elo7.nasa.exception.ConvertionException;
+import elo7.nasa.exception.ConvertException;
 
 public class ConvertUtil {
 	
@@ -28,10 +28,10 @@ public class ConvertUtil {
 						lista.add(Comando.M);
 						break;
 					default:
-						throw new ConvertionException();
+						throw new ConvertException();
 					}
 			    }
-		} catch (ConvertionException e) {
+		} catch (ConvertException e) {
 			e.printStackTrace();
 		}
 		
@@ -56,10 +56,10 @@ public class ConvertUtil {
 				d = Direcao.E;
 				break;
 			default:
-				throw  new ConvertionException();
+				throw  new ConvertException();
 			}
 
-		} catch (ConvertionException e) {
+		} catch (ConvertException e) {
 			e.printStackTrace();
 		}
 
